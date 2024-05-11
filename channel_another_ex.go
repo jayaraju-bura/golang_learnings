@@ -34,6 +34,8 @@ func main() {
 	}()
 	wg.Wait()
 	close(resch)
+	// reason for adding this sleep here is that program exits after closing the channel before printing the time taken to
+        // execute the coroutines "doWork"
 	time.Sleep(time.Second)
 
 }
